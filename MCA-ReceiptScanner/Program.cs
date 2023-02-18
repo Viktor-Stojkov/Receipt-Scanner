@@ -31,7 +31,9 @@ if (receipt != null && receipt.Any())
         {
             Console.WriteLine($"\t...{item.Name}");
             Console.WriteLine($"\t Price: ${item.Price}");
-            Console.WriteLine($"\t {item.Description.Substring(0, 10)}...");
+
+            var domesticDescription = item.Description.Length > 10 ? $"{item.Description.Substring(0, 10)}..." : item.Description.Length > 10 ? $"{item.Description.Substring(0, 10)}..." : $"{item.Description}";
+            Console.WriteLine($"\t {domesticDescription}");
 
             var domesticWeight = item.Weight != null ? $"{item.Weight}g" : item.Weight != null ? $"{item.Weight}g" : "N/A";
             Console.WriteLine($"\t Weight: {domesticWeight}");
@@ -47,7 +49,9 @@ if (receipt != null && receipt.Any())
         {
             Console.WriteLine($"\t...{item.Name}");
             Console.WriteLine($"\t Price: ${item.Price}");
-            Console.WriteLine($"\t {item.Description.Substring(0, 10)}...");
+
+            var importedDescription = item.Description.Length > 10 ? $"{item.Description.Substring(0, 10)}..." : item.Description.Length > 10 ? $"{item.Description.Substring(0, 10)}..." : $"{item.Description}";
+            Console.WriteLine($"\t {importedDescription}");
 
             var importedWeight = item.Weight != null ? $"{item.Weight}g" : item.Weight != null ? $"{item.Weight}g" : "N/A";
             Console.WriteLine($"\t Weight: {importedWeight}");
